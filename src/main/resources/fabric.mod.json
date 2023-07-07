@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "simple-paxels",
+	"version": "${version}",
+	"name": "Simple Paxels",
+	"description": "This mod adds 6 new tools to minecraft called paxels, these are a combination of an axe, pickaxe and shovel",
+	"authors": [
+		"Fej1Fun"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/simple-paxels/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"fej.simplepaxels.SimplePaxels"
+		]
+	},
+	"mixins": [
+		"simple-paxels.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

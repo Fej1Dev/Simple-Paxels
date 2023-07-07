@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    " R ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:diamond_axe"
+    },
+    "S": {
+      "item": "minecraft:diamond_shovel"
+    },
+    "P": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "R": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "simple-paxels:diamond_paxel",
+    "count": 1
+  }
+}
+
