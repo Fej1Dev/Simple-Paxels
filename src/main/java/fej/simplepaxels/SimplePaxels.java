@@ -1,6 +1,5 @@
 package fej.simplepaxels;
 
-import fej.simplepaxels.paxels.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
@@ -14,25 +13,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SimplePaxels implements ModInitializer {
-
-	public static final Logger LOGGER = LoggerFactory.getLogger("simple-paxels");
+	
+	public static final String MODID = "simple-paxels";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	//Registering Paxel Tag
-	public static final TagKey<Block> PAXEL_TAG = TagKey.of(RegistryKeys.BLOCK, new Identifier("simple-paxels", "paxel_tag"));
+	public static final TagKey<Block> PAXEL_TAG = TagKey.of(RegistryKeys.BLOCK, new Identifier(MODID, "paxel_tag"));
 
 	//Making Items
 	public static ToolItem WOODEN_PAXEL = new MiningToolItem(6.5F, -3.1F,
-			WoodenPaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.WOOD, PAXEL_TAG, new Item.Settings());
 	public static ToolItem STONE_PAXEL = new MiningToolItem(8.5F, -3.1F,
-			StonePaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.STONE, PAXEL_TAG, new Item.Settings());
 	public static ToolItem IRON_PAXEL = new MiningToolItem(8.5F, -3F,
-			IronPaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.IRON, PAXEL_TAG, new Item.Settings());
 	public static ToolItem GOLDEN_PAXEL = new MiningToolItem(6.5F, -2.9F,
-			GoldenPaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.GOLD, PAXEL_TAG, new Item.Settings());
 	public static ToolItem DIAMOND_PAXEL = new MiningToolItem(8.5F, -2.9F,
-			DiamondPaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.DIAMOND, PAXEL_TAG, new Item.Settings());
 	public static ToolItem NETHERITE_PAXEL = new MiningToolItem(9.5F, -2.9F,
-			NetheritePaxelMaterial.INSTANCE, PAXEL_TAG, new Item.Settings());
+			ToolMaterials.NETHERITE, PAXEL_TAG, new Item.Settings());
 
 	@Override
 	public void onInitialize() {
@@ -47,12 +47,12 @@ public class SimplePaxels implements ModInitializer {
 			content.addAfter(Items.NETHERITE_HOE, NETHERITE_PAXEL);
 		});
 		//Registering Items
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "wooden_paxel"), WOODEN_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "stone_paxel"), STONE_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "iron_paxel"), IRON_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "golden_paxel"), GOLDEN_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "diamond_paxel"), DIAMOND_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier("simple-paxels", "netherite_paxel"), NETHERITE_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "wooden_paxel"), WOODEN_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "stone_paxel"), STONE_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "iron_paxel"), IRON_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "golden_paxel"), GOLDEN_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "diamond_paxel"), DIAMOND_PAXEL);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "netherite_paxel"), NETHERITE_PAXEL);
 		LOGGER.info("Done Registering Paxels");
 	}
 }
