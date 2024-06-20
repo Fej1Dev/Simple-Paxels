@@ -47,12 +47,16 @@ public class SimplePaxels implements ModInitializer {
 			content.addAfter(Items.NETHERITE_HOE, NETHERITE_PAXEL);
 		});
 		//Registering Items
-		Registry.register(Registries.ITEM, new Identifier(MODID, "wooden_paxel"), WOODEN_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier(MODID, "stone_paxel"), STONE_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier(MODID, "iron_paxel"), IRON_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier(MODID, "golden_paxel"), GOLDEN_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier(MODID, "diamond_paxel"), DIAMOND_PAXEL);
-		Registry.register(Registries.ITEM, new Identifier(MODID, "netherite_paxel"), NETHERITE_PAXEL);
+		registerItem("wooden_paxel", WOODEN_PAXEL);
+		registerItem("stone_paxel", STONE_PAXEL);
+		registerItem("iron_paxel", IRON_PAXEL);
+		registerItem("golden_paxel", GOLDEN_PAXEL);
+		registerItem("diamond_paxel", DIAMOND_PAXEL);
+		registerItem("netherite_paxel", NETHERITE_PAXEL);
 		LOGGER.info("Done Registering Paxels");
+	}
+
+	private static void registerItem(String id, Item item) {
+		Registry.register(Registries.ITEM, new Identifier(MODID, id), item);
 	}
 }
